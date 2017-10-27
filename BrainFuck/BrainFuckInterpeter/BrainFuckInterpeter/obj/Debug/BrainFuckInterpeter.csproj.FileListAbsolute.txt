@@ -1,0 +1,12 @@
+C:\Users\tom\Desktop\Backup\Periode 8\Programmeren\BrainFuckInterpeter\BrainFuckInterpeter\bin\Debug\BrainFuckInterpeter.exe.config
+C:\Users\tom\Desktop\Backup\Periode 8\Programmeren\BrainFuckInterpeter\BrainFuckInterpeter\bin\Debug\BrainFuckInterpeter.exe
+C:\Users\tom\Desktop\Backup\Periode 8\Programmeren\BrainFuckInterpeter\BrainFuckInterpeter\bin\Debug\BrainFuckInterpeter.pdb
+C:\Users\tom\Desktop\Backup\Periode 8\Programmeren\BrainFuckInterpeter\BrainFuckInterpeter\obj\Debug\BrainFuckInterpeter.csprojResolveAssemblyReference.cache
+C:\Users\tom\Desktop\Backup\Periode 8\Programmeren\BrainFuckInterpeter\BrainFuckInterpeter\obj\Debug\BrainFuckInterpeter.exe
+C:\Users\tom\Desktop\Backup\Periode 8\Programmeren\BrainFuckInterpeter\BrainFuckInterpeter\obj\Debug\BrainFuckInterpeter.pdb
+C:\Users\tom\Desktop\Backup\Periode 8\Programmeren\BrainFuck\BrainFuckInterpeter\BrainFuckInterpeter\bin\Debug\BrainFuckInterpeter.exe.config
+C:\Users\tom\Desktop\Backup\Periode 8\Programmeren\BrainFuck\BrainFuckInterpeter\BrainFuckInterpeter\bin\Debug\BrainFuckInterpeter.exe
+C:\Users\tom\Desktop\Backup\Periode 8\Programmeren\BrainFuck\BrainFuckInterpeter\BrainFuckInterpeter\bin\Debug\BrainFuckInterpeter.pdb
+C:\Users\tom\Desktop\Backup\Periode 8\Programmeren\BrainFuck\BrainFuckInterpeter\BrainFuckInterpeter\obj\Debug\BrainFuckInterpeter.csprojResolveAssemblyReference.cache
+C:\Users\tom\Desktop\Backup\Periode 8\Programmeren\BrainFuck\BrainFuckInterpeter\BrainFuckInterpeter\obj\Debug\BrainFuckInterpeter.exe
+C:\Users\tom\Desktop\Backup\Periode 8\Programmeren\BrainFuck\BrainFuckInterpeter\BrainFuckInterpeter\obj\Debug\BrainFuckInterpeter.pdb
