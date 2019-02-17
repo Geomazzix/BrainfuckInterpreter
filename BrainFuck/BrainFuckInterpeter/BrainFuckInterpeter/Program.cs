@@ -5,16 +5,22 @@ namespace BrainFuckInterpeter
 {
     class Program
     {
+        static enum EErrorCode
+        {
+            NONE = 0,
+            NO_BRAINFUCK_SYMBOL
+        }
+
         static void Main(string[] args)
         {
             if (args.Length > 0)
             {
-                //All the brainFuck functions.
+                //Read the source from the brainf*ck file.
                 byte[] brainFuckContent = File.ReadAllBytes(@"" + args[0]);
                 byte[] memoryByte = new byte[30000];
                 int bytePointer = 0;
 
-                //Loop through the chars of the brainFuck document and check if it is one of the functions of brainfuck, if not ignore them.
+                //Loop through the brainf*ck code and filter the symbols that it comes across.
                 for (int i = 0; i < brainFuckContent.Length; i++)
                 {
                     switch (brainFuckContent[i])
@@ -35,19 +41,11 @@ namespace BrainFuckInterpeter
                             if (memoryByte[bytePointer] == 0)
                             {
                                 int loops = 1;
-
                                 while (loops > 0)
                                 {
                                     i += 1;
-
-                                    if (brainFuckContent[i] == 91)
-                                    {
-                                        loops += 1;
-                                    }
-                                    else if (brainFuckContent[i] == 93)
-                                    {
-                                        loops -= 1;
-                                    }
+                                    if (brainFuckContent[i] == 91)      loops += 1;
+                                    else if (brainFuckContent[i] == 93) loops -= 1;
                                 }
                             }
                             continue;
@@ -55,19 +53,11 @@ namespace BrainFuckInterpeter
                             if (memoryByte[bytePointer] != 0)
                             {
                                 int loops = 1;
-
                                 while (loops > 0)
                                 {
                                     i -= 1;
-
-                                    if (brainFuckContent[i] == 91)
-                                    {
-                                        loops -= 1;
-                                    }
-                                    else if (brainFuckContent[i] == 93)
-                                    {
-                                        loops += 1;
-                                    }
+                                    if (brainFuckContent[i] == 91)      loops -= 1;
+                                    else if (brainFuckContent[i] == 93) loops += 1;
                                 }
                             }
                             continue;
@@ -77,29 +67,36 @@ namespace BrainFuckInterpeter
                         case 44:    //,
                             memoryByte[bytePointer] = (byte)Console.ReadKey().KeyChar;
                             continue;
+                        case default:
+                            ExitProgram(NO_BRAINFUCK_SYMBOL);
                     }
                 }
-
-                //Make sure to exit the programm.
                 ExitProgram();
             }
-
             ExitProgram();
         }
 
-
-
-        //Make sure to check on which platform the user works.
-        private static void ExitProgram()
+        private static void ExitProgram(EErrorCode errorCode = 0)
         {
-            Console.WriteLine("\nPress any key to continue...");
-            Console.ReadKey();
-            if (System.Windows.Forms.Application.MessageLoop)
+            if (System.Windows.Forms.Application.MessageLoop && errorCode == EErrorCode.NONE)
             {
+                Console.WriteLine("\nPress any key to continue...");
+                Console.ReadKey();
                 System.Windows.Forms.Application.Exit();
             }
             else
             {
+                switch (errorCode)
+                {
+                    case EErrorCode.NO_BRAINFUCK_SYMBOL:
+                        Console.WriteLine("\n Error: this symbol is not part of the brainf*ck.");
+                        break;
+                    default:
+                        Console.WriteLine("\n Error: Unknown.");
+                        break;
+                }
+
+                Console.ReadKey();
                 System.Environment.Exit(1);
             }
         }
